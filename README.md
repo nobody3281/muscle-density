@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muscle Density Checklist</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 { color: #4CAF50; font-size: 24px; text-align: center; }
+        h2 { color: #2196F3; font-size: 18px; margin-top: 25px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .rule { background-color: #1e1e1e; padding: 10px; border-radius: 5px; font-style: italic; font-size: 13px; color: #bbb; margin-bottom: 15px; }
+        .task-list { list-style: none; padding: 0; }
+        .task-item {
+            display: flex;
+            align-items: center;
+            background-color: #1e1e1e;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .task-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 15px;
+            accent-color: #4CAF50;
+        }
+        .task-item input:checked + span {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .round-box {
+            border: 2px dashed #444;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+        .round-title {
+            font-weight: bold;
+            color: #FF9800;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💪 Muscle Density</h1>
+
+    <h2>Phase 1: Warm-Up & Activation</h2>
+    <ul class="task-list">
+        <li class="task-item"><input type="checkbox"><span><b>Light Run:</b> 3 to 5 minutes</span></li>
+        <li class="task-item"><input type="checkbox"><span><b>Gymnastic Stretches:</b> Circles & rolls</span></li>
+        <li class="task-item"><input type="checkbox"><span><b>Joint Activation:</b> 10 shrugs & 10 squats</span></li>
+    </ul>
+
+    <h2>Phase 2: Main Workout (5 Rounds)</h2>
+    <div class="rule">⚠️ Rule: 3 seconds down, 1-second pause, explode up. Rest 2 minutes.</div>
+    
+    <!-- This creates a loop for the 5 workout rounds -->
+    <div id="rounds-container"></div>
+
+    <h2>Phase 3: Cool-Down</h2>
+    <ul class="task-list">
+        <li class="task-item"><input type="checkbox"><span><b>Dead Hang:</b> 30 seconds</span></li>
+        <li class="task-item"><input type="checkbox"><span><b>Deep Squat Hold:</b> 30 seconds</span></li>
+    </ul>
+
+    <script>
+        // Automatically build the 5 rounds to keep code short
+        const container = document.getElementById('rounds-container');
+        for (let i = 1; i <= 5; i++) {
+            const roundDiv = document.createElement('div');
+            roundDiv.className = 'round-box';
+            roundDiv.innerHTML = `
+                <div class="round-title">Round ${i} of 5</div>
+                <ul class="task-list">
+                    <li class="task-item"><input type="checkbox"><span><b>L-Sit Pull-Ups:</b> 3–6 reps</span></li>
+                    <li class="task-item"><input type="checkbox"><span><b>Handstand Push-Ups:</b> 3–6 reps</span></li>
+                    <li class="task-item"><input type="checkbox"><span><b>Weighted Pistol Squats:</b> 3–6 reps</span></li>
+                </ul>
+            `;
+            container.appendChild(roundDiv);
+        }
+    </script>
+</body>
+</html>
